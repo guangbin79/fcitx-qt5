@@ -1,0 +1,2 @@
+apt update && apt install extra-cmake-modules libfcitx-qt5-dev
+apt update && apt install extra-cmake-modules:arm64 libfcitx-qt5-dev:arm64

@@ -14,6 +14,12 @@ option(ENABLE_QT5 "Enable Qt5" On)
 option(ENABLE_QT6 "Enable Qt6 im module" Off)
 option(ENABLE_LIBRARY "Qt library" On)
 
+set(CMAKE_PREFIX_PATH /opt/qt5-x86_64-gl)
+set(CMAKE_SKIP_BUILD_RPATH FALSE)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
+set(CMAKE_INSTALL_RPATH "\${ORIGIN}/../../lib")
+
 include(GNUInstallDirs)
 include(FeatureSummary)
 include(GenerateExportHeader)

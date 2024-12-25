@@ -1,0 +1,38 @@
+version: '2'
+services:
+  x86_64-compiler:
+    image: 'qt_x86_64:v1.3'
+    container_name: x86_64-compiler
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      HOME: "${HOME}"
+    volumes:
+      - "..:${HOME}"
+      - /opt/cross-library:/opt/cross-library:ro
+    tty: true
+    network_mode: host
+    privileged: true
+  arm64-compiler:
+    image: 'qt_arm64:v1.3'
+    container_name: arm64-compiler
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      HOME: "${HOME}"
+    volumes:
+      - "..:${HOME}"
+      - /opt/cross-library:/opt/cross-library:ro
+    tty: true
+    network_mode: host
+    privileged: true
+  win64-compiler:
+    image: 'qt_win64:v1.3'
+    container_name: win64-compiler
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      HOME: "${HOME}"
+    volumes:
+      - "..:${HOME}"
+      - /opt/cross-library:/opt/cross-library:ro
+    tty: true
+    network_mode: host
+    privileged: true
